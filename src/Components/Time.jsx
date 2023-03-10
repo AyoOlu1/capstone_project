@@ -9,7 +9,7 @@ function Time() {
 
   useEffect(() => {
     // run the getCurrentDate function every second
-    setInterval(getCurrentDate, 1000);
+    setInterval(getCurrentDate, 9000);
 
     return clearInterval(getCurrentDate);
   }, []);
@@ -44,16 +44,32 @@ function Time() {
     // console.log(hour, minutes, seconds);
     console.log(suffixAmPm);
     console.log(newHour, newMinutes, newSeconds);
-    return newSeconds;
   }
 
   return (
     <>
-      <div className="clock">
-        <div className="hour">{hour}</div>
-        <span>:</span>
-        <div className="minute">{`${minutes} `}</div>
-        <span>:</span>
+      <div
+        style={{
+          backgroundColor: "green",
+          color: "hsl(193, 38%, 86%)",
+          display: "flex",
+          justifyContent: "center",
+          padding: "20px",
+          borderRadius: "0.5rem",
+          margin: "0px auto",
+          width: "20rem",
+          fontSize: "2rem",
+          marginBottom: "3rem",
+        }}
+      >
+        <div className="hour">
+          {hour}
+          <span>&nbsp;:&nbsp;</span>
+        </div>
+        <div className="minute">
+          {`${minutes} `}
+          <span>:&nbsp;</span>
+        </div>
         <div className="seconds">{`${seconds} ${suffix}`}</div>
       </div>
     </>
