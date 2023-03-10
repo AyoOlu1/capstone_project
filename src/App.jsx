@@ -1,16 +1,16 @@
 import "./style.css";
-import Header from "./Components/Heading";
-import GoogleSearch from "./Components/GoogleSearch";
-import Footer from "./Components/Footer";
-import Time from "./Components/Time";
+import { Header, GoogleSearch, Footer, Time, News } from "./Components/index";
 
 export const App = () => {
   return (
-    <div className="App">
+    <>
       <Header />
-      <Time />
-      <GoogleSearch />
+      <div className="App">
+        <Time />
+        <GoogleSearch />
+        <News />
+      </div>
       <Footer />
-    </div>
+    </>
   );
 };
