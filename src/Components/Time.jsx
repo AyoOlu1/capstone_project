@@ -4,7 +4,7 @@ function Time() {
   //   const [time, setTime] = useState({ hour, minutes, seconds });
   const [hour, setHour] = useState(Number);
   const [minutes, setMinutes] = useState(Number);
-  const [seconds, setSeconds] = useState(Number);
+  // const [seconds, setSeconds] = useState(Number);
   const [suffix, setSuffix] = useState("");
 
   useEffect(() => {
@@ -17,33 +17,23 @@ function Time() {
   function getCurrentDate() {
     const date = new Date();
 
-    const [newHour, newMinutes, newSeconds] = [
+    const [
+      newHour,
+      newMinutes,
+      // , newSeconds
+    ] = [
       date.getHours(),
       date.getMinutes(),
-      date.getSeconds(),
+      // date.getSeconds(),
     ];
 
     setHour(newHour);
     setMinutes(newMinutes);
-    setSeconds(newSeconds);
-    // setTime((prevTime) => ({
-    //   ...prevTime, // copy all other field/objects
-    //   hour: newHour,
-    //   minutes: newMinutes,
-    //   seconds: newSeconds,
-    // }));
+    // setSeconds(newSeconds);
 
     // add suffix AM or PM
     const suffixAmPm = `${newHour < 12 ? "AM" : "PM"}`;
     setSuffix(suffixAmPm);
-
-    // display the time in the html
-    // hourDiv.textContent = hour;
-    // minuteDiv.textContent = `${minutes} `;
-    // secondsDiv.textContent = `${seconds} ${suffixAmPm}`;
-    // console.log(hour, minutes, seconds);
-    console.log(suffixAmPm);
-    console.log(newHour, newMinutes, newSeconds);
   }
 
   return (
@@ -66,11 +56,8 @@ function Time() {
           {hour}
           <span>&nbsp;:&nbsp;</span>
         </div>
-        <div className="minute">
-          {`${minutes} `}
-          <span>:&nbsp;</span>
-        </div>
-        <div className="seconds">{`${seconds} ${suffix}`}</div>
+        <div className="minute">{`${minutes} ${suffix}`}</div>
+        {/* <div className="seconds">{`${seconds} ${suffix}`}</div> */}
       </div>
     </>
   );
