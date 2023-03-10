@@ -55,7 +55,7 @@ li {
 
 /* Hero Section */
 .center {
-  height: 70%;
+  /* height: 70%; */
   display: flex;
   justify-content: center;
   align-items: center;
