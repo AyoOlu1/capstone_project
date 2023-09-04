@@ -274,9 +274,15 @@ footer nav ul {
 .location {
   padding-left: 38px;
 }
+.news-p {
+  font-weight: 400;
+}
 @media (max-width: 768px) {
+  .news-p {
+    font-size: 12px;
+  }
   .news-h2 {
-    font-size: 16px;
+    font-size: 14px;
   }
   footer {
     min-height: 20%;

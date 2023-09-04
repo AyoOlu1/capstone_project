@@ -26,10 +26,11 @@ function Time() {
       date.getMinutes(),
       // date.getSeconds(),
     ];
-
     setHour(newHour);
-    setMinutes(newMinutes);
-    // setSeconds(newSeconds);
+
+    // check if the minute is less than 10 and add a prefix "0"
+    const checkNewMinute = `${newMinutes < 10 ? `0${newMinutes}` : newMinutes}`;
+    setMinutes(checkNewMinute);
 
     // add suffix AM or PM
     const suffixAmPm = `${newHour < 12 ? "AM" : "PM"}`;
