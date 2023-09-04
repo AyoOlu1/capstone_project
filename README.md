@@ -1,4 +1,4 @@
-# Google Homepage Clone
+# Google Homepage Clone -- Updated Version
 
 ## Welcome to the CapStone Project!
 
